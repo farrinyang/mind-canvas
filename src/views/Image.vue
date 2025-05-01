@@ -24,24 +24,21 @@
 
     <!-- 中间主要区域 -->
     <div class="main-panel">
-      <div style="position: absolute; left: 390px; top: 20px;">
-        <el-button @click="$router.push('/home')"><el-icon size="15"><ArrowLeftBold /></el-icon>返回首页</el-button>
-      </div>
       <!-- 头部选项 -->
       <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 16px;">
         <el-radio-group v-model="data.form.radio" size="large">
-          <el-radio-button @click="changeRadio('文生图')" label="文生图" value="文生图" class="box-show" style="margin-right: 20px;" />
-          <el-radio-button @click="changeRadio('图生图')" label="图生图" value="图生图" class="box-show" />
+          <el-radio-button @click="changeRadio('智画师')" label="智画师" value="智画师" class="box-show" style="margin-right: 20px;" />
+          <el-radio-button @click="changeRadio('形易坊')" label="形易坊" value="形易坊" class="box-show" />
         </el-radio-group>
       </div>
 
       <div style="margin-top: 50px;">
-        <!-- 文生图 -->
-        <div v-if="data.form.radio === '文生图'">
+        <!-- 智画师 -->
+        <div v-if="data.form.radio === '智画师'">
           <!-- 标题 -->
           <div style="text-align: center; margin-bottom: 20px;">
-            <div style="font-size: 35px; font-weight: bold; color: #272729; display: flex; justify-content: center;">欢迎使用 <img :src="logoImg" style="width: 100px; margin: 0 10px;"> 文生图</div>
-            <div style="color: #6c757d;">智能生成符合描述的图片，让您拥有独一无二的空间。</div>
+            <div style="font-size: 35px; font-weight: bold; color: #272729; display: flex; justify-content: center;">欢迎使用 <img :src="logoImg" style="width: 100px; margin: 0 10px;"> 智画师</div>
+            <div style="color: #6c757d;">通过文字描述智能生成室内设计图，简化沟通流程，让创意和设想直观呈现，轻松实现理想空间。</div>
           </div>
           
           <!-- 选项区域 -->
@@ -55,12 +52,12 @@
           </div>
         </div>
 
-        <!-- 图生图 -->
+        <!-- 形易坊 -->
         <div v-else>
           <!-- 标题 -->
           <div style="text-align: center; margin-bottom: 20px;">
-            <div style="font-size: 35px; font-weight: bold; color: #272729; display: flex; justify-content: center;">欢迎使用 <img :src="logoImg" style="width: 100px; margin: 0 10px;"> 图生图</div>
-            <div style="color: #6c757d;">图片结合描述，智能生成符合描述的图片，让您拥有期望的空间。</div>
+            <div style="font-size: 35px; font-weight: bold; color: #272729; display: flex; justify-content: center;">欢迎使用 <img :src="logoImg" style="width: 100px; margin: 0 10px;"> 形易坊</div>
+            <div style="color: #6c757d;">将设计草图转化为详细装修效果图，支持风格迁移，缩短设计周期，提供丰富视觉效果选择。</div>
           </div>
 
           <!-- 图片上传区域 -->
@@ -136,7 +133,7 @@ import logoImg from '@/assets/imgs/logo.png'
 // 数据
 const data = reactive({
   form: { 
-    radio: '文生图',
+    radio: '智画师',
     prompt: '',
     sizeselected: '',
     forwardPrompt: '',
@@ -171,10 +168,8 @@ const prompt = () => {
 <style scoped>
 .container {
   display: flex;
-  height: 100vh;
   padding: 20px;
   gap: 20px;
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
 .left-panel {

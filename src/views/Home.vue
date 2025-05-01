@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <img :src="logoImg" alt="Logo" class="logo"> 
+    <div>
+      <img @click="$router.push('/mind-canvas')" :src="logoImg" alt="Logo" class="logo">
+      <div class="logo" style="top: 80px; font-size: 15px; color: #6c757d;">点击前往官网</div>
+    </div>
 
     <div class="header">
       <h1 class="title">智绘空间</h1>
@@ -12,16 +15,16 @@
       <div class="card">
         <div class="card-number">01</div>
         <div class="card-icon">🎨</div>
-        <h1>文生图</h1>
-        <p>根据用户描述，智能生成符合描述的图片，让您拥有独一无二的空间。</p>
-        <el-button @click="$router.push('/ai')" type="primary" style="position: relative; left: 330px;">立即体验<el-icon class="el-icon--right"><ArrowRight /></el-icon></el-button>
+        <h1>智画师</h1>
+        <p>通过文字描述智能生成室内设计图，简化沟通流程，让创意和设想直观呈现，轻松实现理想空间。</p>
+        <el-button @click="$router.push('/ai/image')" type="primary" style="position: relative; left: 330px;">立即体验<el-icon class="el-icon--right"><ArrowRight /></el-icon></el-button>
       </div>
       <div class="card">
         <div class="card-number">02</div>
         <div class="card-icon">🖼️</div>
-        <h1>图生图</h1>
-        <p>根据用户提供的图片结合描述，智能生成符合描述的图片，让您拥有期望的空间。</p>
-        <el-button @click="$router.push('/ai')" type="primary" style="position: relative; left: 330px;">立即体验<el-icon class="el-icon--right"><ArrowRight /></el-icon></el-button>
+        <h1>形易坊</h1>
+        <p>将设计草图转化为详细装修效果图，支持风格迁移，缩短设计周期，提供丰富视觉效果选择。</p>
+        <el-button @click="$router.push('/ai/image')" type="primary" style="position: relative; left: 330px;">立即体验<el-icon class="el-icon--right"><ArrowRight /></el-icon></el-button>
       </div>
     </div>
   </div>
